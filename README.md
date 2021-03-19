@@ -10,6 +10,11 @@ complete project overhaul in order to be buildable with the post Java 9 version 
 entire project had to be created as a Java modular application, requiring some tinkering with the base libraries as well
 as the building method. It uses Gradle as the build tool.
 
+Requirements
+------------
+
+This project requires Java 14+ and Java FX 14+, as well as Scala 2.13
+
 Application description
 -----------------------
 
