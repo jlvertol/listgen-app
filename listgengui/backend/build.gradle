@@ -1,0 +1,58 @@
+plugins {
+    id 'scala'
+    id "com.github.maiflai.scalatest" version "0.26"
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'lib'
+    }
+    maven {
+        url "https://mvnrepository.com/artifact/com.lihaoyi/os-lib"
+    }
+}
+
+def artifactType = Attribute.of('artifactType', String)
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.13.1'
+    implementation 'org.apache.poi:poi:4.1.2'
+    implementation 'org.apache.poi:poi-ooxml:4.1.2'
+    //implementation 'com.lihaoyi:os-lib_2.13:0.7.1'
+    implementation 'com.lihaoyi:os-lib:0.7.1'
+    implementation 'com.lihaoyi:geny:0.6.2'
+    testImplementation 'org.scalatest:scalatest_2.13:3.2.0'
+    testRuntime 'com.vladsch.flexmark:flexmark-all:0.35.10'
+
+    registerTransform(Rename) {
+        from.attribute(artifactType, 'jar')
+        to.attribute(artifactType, 'java-classes-directory')
+    }
+
+     println dependencies.properties
+             .sort{it.key}
+             .collect{it}
+             //.findAll{!filtered.contains(it.key)}
+             .join('\n')
+}
+
+
+test {
+
+}
+
+import org.gradle.api.artifacts.transform.TransformParameters;
+
+public abstract class Rename implements TransformAction<TransformParameters.None> {
+    @InputArtifact
+    public abstract Provider<FileSystemLocation> getInputArtifact();
+
+    @Override
+    public void transform(TransformOutputs outputs) {
+        File input = getInputArtifact().get().getAsFile()
+        File output = outputs.file(input.getName() + ".transformed")
+        ok = output.getProperties()
+//        println(ok)
+    }
+}

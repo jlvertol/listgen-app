@@ -1,0 +1,3 @@
+rootProject.name = 'listgengui'
+include("backend")
+include("frontend")
