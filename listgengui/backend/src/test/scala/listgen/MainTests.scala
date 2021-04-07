@@ -1,10 +1,10 @@
 package listgen
 
 import org.apache.poi.ss.usermodel.Sheet
-import org.scalatest._
+import org.scalatest.funsuite.AnyFunSuite
 import os.Path
 
-class MainTests extends FunSuite {
+class MainTests extends AnyFunSuite {
   test("Saves file") {
     val wd: Path = os.pwd
     val filename = "sample list test file"
