@@ -15,6 +15,11 @@ Requirements
 
 This project requires Java 14+ and Java FX 14+, as well as Scala 2.13
 
+Building caveats
+----------------
+
+I have only built this application on Linux. It's multiplatform and I've made binaries for Windows from Linux (check the comments on the project's .gradle file), but I asked someone to build it on Windows and they didn't manage to; I haven't investigated the problem, all I know is that the embedded `gradlew` is not working for them. On Linux just install Gradle on your system so you can use the `gradle` command instead if you have problems with `gradlew`.
+
 Application description
 -----------------------
 
