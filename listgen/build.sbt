@@ -2,7 +2,7 @@ name := "listgen"
 
 version := "0.1"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.6"
 
 libraryDependencies ++= Seq(
   "org.apache.poi" % "poi" % "3.17",
