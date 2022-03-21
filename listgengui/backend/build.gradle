@@ -23,7 +23,6 @@ dependencies {
     implementation 'com.lihaoyi:os-lib:0.7.1'
     implementation 'com.lihaoyi:geny:0.6.2'
     testImplementation 'org.scalatest:scalatest_2.13:3.2.0'
-    testRuntime 'com.vladsch.flexmark:flexmark-all:0.35.10'
 
     registerTransform(Rename) {
         from.attribute(artifactType, 'jar')
